@@ -3,7 +3,7 @@ import { styled } from "@co-design/styled";
 const DoorWrapper = styled.div`
   position: absolute;
   width: 600px;
-  height: 400px;
+  min-height: 400px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
