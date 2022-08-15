@@ -11,7 +11,7 @@ const Result = ({ answers, onRetry }) => {
   const mbti = `${EI}${NS}${TF}${PJ}`
 
   return (
-    <Template>
+    <Template animate>
       <Container size="xsmall" co={{ height: '100%', overflowY: 'auto', padding: '32px 16px' }}>
         <Stack spacing={32}>
           <Stack spacing={8}>
