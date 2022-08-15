@@ -1,12 +1,29 @@
-import { Button, Center, Container, Heading, Progress, Stack } from '@co-design/core'
+import {
+  Button,
+  Center,
+  Container,
+  Heading,
+  Progress,
+  Stack,
+} from '@co-design/core'
+import { useCallback } from 'react'
+import { useState } from 'react'
 import { questions } from '../data'
 import Template from './template'
 
 const Question = ({ step, onClickAnswer }) => {
+  const [answers, setAnswers] = useState([0, 1])
+  const handleClickAnswer = useCallback(
+    (i) => {
+      setAnswers((step + 1) % 3 === 0 ? [0, 1] : i === 0 ? [1, 0] : [0, 1])
+      onClickAnswer(i)
+    },
+    [onClickAnswer, step]
+  )
   return (
     step < 12 && (
       <Template>
-        <Center co={{width: '100%', height: '100%'}}>
+        <Center co={{ width: '100%', height: '100%' }}>
           <Container
             fluid
             co={{
@@ -29,13 +46,22 @@ const Question = ({ step, onClickAnswer }) => {
               </Stack>
 
               <Stack>
-                <Button variant="solid" onClick={() => onClickAnswer(0)}>
-                  {questions[step].answer[0]}
+                <Button
+                  variant="solid"
+                  onClick={() => handleClickAnswer(answers[0])}
+                >
+                  {questions[step].answer[answers[0]]}
                 </Button>
-                <Button variant="solid" onClick={() => onClickAnswer(1)}>
-                  {questions[step].answer[1]}
+                <Button
+                  variant="solid"
+                  onClick={() => handleClickAnswer(answers[1])}
+                >
+                  {questions[step].answer[answers[1]]}
                 </Button>
-                <Progress co={{ marginTop: '1rem' }} value={(step / 12) * 100} />
+                <Progress
+                  co={{ marginTop: '1rem' }}
+                  value={(step / 12) * 100}
+                />
               </Stack>
             </Stack>
           </Container>
