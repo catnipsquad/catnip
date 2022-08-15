@@ -1,12 +1,10 @@
-import { Button, Container, Heading, Stack, Text, View } from "@co-design/core";
-import { useCallback, useEffect } from "react";
-import { questions } from "../data";
-import useSessionStorage from "../hook/useSessionStorage";
+import { Button, Container, Heading, Progress, Stack } from '@co-design/core'
+import { questions } from '../data'
 
 const Question = ({ step, onClickAnswer }) => {
   return (
     step < 12 && (
-      <Container size="xsmall" co={{ border: "1px solid #444" }}>
+      <Container size="xsmall" co={{ border: '1px solid #444' }}>
         <Heading align="center">{questions[step].title}</Heading>
 
         <Stack>
@@ -17,9 +15,10 @@ const Question = ({ step, onClickAnswer }) => {
             {questions[step].answer[1]}
           </Button>
         </Stack>
+        <Progress co={{ margin: '20px' }} value={(step / 12) * 100} />
       </Container>
     )
-  );
-};
+  )
+}
 
-export default Question;
+export default Question
