@@ -1,3 +1,4 @@
+import { CoProvider } from "@co-design/core";
 import { useCallback, useState } from "react";
 import Main from "./component/main";
 import Question from "./component/question";
@@ -23,7 +24,7 @@ function App() {
   }, [setState]);
 
   return (
-    <>
+    <CoProvider withNormalizeCSS withGlobalStyles>
       {mode === "main" ? (
         <Main onStart={handleClickStart} />
       ) : state.length < 12 ? (
@@ -31,7 +32,7 @@ function App() {
       ) : (
         <Result answers={state} onRetry={handleClickRetry} />
       )}
-    </>
+    </CoProvider>
   );
 }
 

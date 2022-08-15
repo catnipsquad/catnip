@@ -1082,10 +1082,29 @@
   resolved "https://registry.yarnpkg.com/@co-design/hooks/-/hooks-0.6.3.tgz#752d4f41c9c9ee63588cc695d9825f94c62fa40f"
   integrity sha512-x5MezTYwC7dAv9+cYJh9+JSGzURmvFUW5ptI8nEPCoxb0hVeLAeJBsSrlvqSHq1Z2KzlhjXgKtk99GMSby3EIA==
 
+"@co-design/styled@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@co-design/styled/-/styled-0.7.5.tgz#fff64f37a930de0c9dffab62989d56344abd5aa4"
+  integrity sha512-KtHT51DrvpPCS1jHwNGmstF8AaFiKg1c9+RxAlSdAD2eiRzTOauU9KtrlwvsqlPqSO8DHAKeJfbGF+AtiUM7yA==
+  dependencies:
+    "@co-design/styles" "^0.7.5"
+
 "@co-design/styles@^0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@co-design/styles/-/styles-0.7.3.tgz#aa7ecbd189c8f56d8eb0e46f9844c4128a7e71fc"
   integrity sha512-auCbHk41ZYqPZ/GRAH+OiQMbNsA9qxy8tQHutd96pFCQkN83+iSBboQcKAyE9zYaPbZjZNtBGVWVi4Hh1B2q0g==
+  dependencies:
+    "@emotion/cache" "^11.6.0"
+    "@emotion/react" "^11.6.0"
+    "@emotion/serialize" "^1.0.2"
+    "@emotion/utils" "^1.0.0"
+    clsx "^1.1.1"
+    csstype "^3.0.9"
+
+"@co-design/styles@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@co-design/styles/-/styles-0.7.5.tgz#89801a2faf055f708477ba18d3c5ae242ddded8d"
+  integrity sha512-w1o9jAwCCy9WloEH6S+MS7A5wjImhiCuRIJgcZpUSZ8XvHuvGWzTw5bHydhChtTOU0ZPQhPfwDFwdjXtTLR8LA==
   dependencies:
     "@emotion/cache" "^11.6.0"
     "@emotion/react" "^11.6.0"
