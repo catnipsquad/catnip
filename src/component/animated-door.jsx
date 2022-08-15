@@ -15,7 +15,8 @@ const DoorWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: 0;
+    animation: fadeIn .8s ease-in-out 2.2s forwards;
 
     @keyframes fadeIn {
       from {
@@ -48,30 +49,25 @@ const DoorWrapper = styled.div`
   .side1 {
     right: 0;
     bottom: 0;
-    width: 1px;
-    height: 100%;
+    animation: drawSide1 .5s ease-in-out forwards;
     z-index: 10;
   }
   .side2 {
     right: 0;
     top: 0;
-    height: 1px;
-    width: 100%;
+    animation: drawSide2 .5s ease-in-out .5s forwards;
     z-index: 10;
   }
   .side3 {
     left: 0;
     top: 0;
-    height: 100%;
-    width: 1px;
-    bottom: 0;
+    animation: drawSide3 .5s ease-in-out 1s forwards;
     z-index: 10;
   }
   .side4 {
     left: 0;
     bottom: 0;
-    height: 1px;
-    width: 100%;
+    animation: drawSide4 .5s ease-in-out 1.5s forwards;
     z-index: 10;
   }
 
@@ -91,13 +87,80 @@ const DoorWrapper = styled.div`
       position: relative;
       width: 100%;
       height: 100%;
-      opacity: 1;
+      opacity: 0;
       background-color: #0e1014;
+      animation: fadeIn 0.3s ease-out 2s forwards;
+
+      img {
+        position: relative;
+        top: 50%;
+        width: 70%;
+        height: 70%;
+        transform: translateY(-50%);
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 2.2s forwards, fadeOut 0.5s ease-out 5.2s forwards;
+      }
+    }
+
+    @keyframes showBackground {
+      0% {
+        transform: scale(.5, .5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
+    }
+  }
+
+  @keyframes drawSide1 {
+    from {
+      width: 1px;
+      height: 0;
+    }
+    to {
+      width: 1px;
+      height: 100%;
+    }
+  }
+
+  @keyframes drawSide2 {
+    from {
+      height: 1px;
+      width: 0;
+    }
+    to {
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  @keyframes drawSide3 {
+    from {
+      height: 0;
+      width: 1px;
+    }
+    to {
+      height: 100%;
+      width: 1px;
+      bottom: 0;
+    }
+  }
+
+  @keyframes drawSide4 {
+    from {
+      height: 1px;
+      width: 0;
+    }
+    to {
+      height: 1px;
+      width: 100%;
     }
   }
 `
 
-const AnimatedDoor = ({ children }) => {
+const Door = ({ children }) => {
   return (
     <DoorWrapper>
       <div className="side side1" />
@@ -113,4 +176,4 @@ const AnimatedDoor = ({ children }) => {
   )
 }
 
-export default AnimatedDoor;
+export default Door;

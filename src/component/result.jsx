@@ -1,4 +1,5 @@
 import { Button, Container, Heading, Image } from "@co-design/core";
+import Template from "./template";
 
 const Result = ({ answers, onRetry }) => {
   const EI = answers.slice(0, 3).filter((x) => x === 0).length >= 2 ? "E" : "I";
@@ -9,11 +10,13 @@ const Result = ({ answers, onRetry }) => {
   const mbti = `${EI}${NS}${TF}${PJ}`;
 
   return (
-    <Container size="xsmall">
-      <Heading>{mbti}</Heading>
-      <Image src={`/images/${mbti}.png`} width={256} fit="contain" />
-      <Button onClick={onRetry}>다시하기</Button>
-    </Container>
+    <Template>
+      <Container size="xsmall">
+        <Heading>{mbti}</Heading>
+        <Image src={`/images/${mbti}.png`} width={256} fit="contain" />
+        <Button onClick={onRetry}>다시하기</Button>
+      </Container>
+    </Template>
   );
 };
 
