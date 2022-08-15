@@ -19,8 +19,10 @@ const Result = ({ answers, onRetry }) => {
           width={256}
           fit="contain"
         />
-        {result[mbti].contents.map((r) => (
-          <Text children={r} />
+        {result[mbti]?.contents?.map((r, i) => (
+          <p key={i} style={{ textAlign: 'left' }}>
+            <Text children={r} align="left" co={{ color: 'white' }} />
+          </p>
         ))}
         <Button onClick={onRetry}>다시하기</Button>
       </Container>
