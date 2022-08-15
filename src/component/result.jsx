@@ -12,11 +12,11 @@ const Result = ({ answers, onRetry }) => {
 
   return (
     <Template>
-      <Container size="xsmall">
-        <Heading>{mbti}</Heading>
+      <Container size="xsmall" co={{ height: '100%', overflowY: 'auto' }}>
+        <Heading>{`${mbti} (${result[mbti]?.title})`}</Heading>
         <Image
           src={`${process.env.PUBLIC_URL}/images/${mbti}.png`}
-          width={256}
+          width={150}
           fit="contain"
         />
         {result[mbti]?.contents?.map((r, i) => (
