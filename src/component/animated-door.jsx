@@ -2,6 +2,7 @@ import { styled } from "@co-design/styled";
 
 const DoorWrapper = styled.div`
   position: absolute;
+  max-width: 90%;
   width: 600px;
   height: 400px;
   left: 50%;

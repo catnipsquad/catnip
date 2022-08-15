@@ -24,7 +24,13 @@ function App() {
   }, [setState]);
 
   return (
-    <CoProvider withNormalizeCSS withGlobalStyles>
+    <CoProvider
+      withNormalizeCSS
+      withGlobalStyles
+      theme={() => ({
+        fontFamily: "GamjaFlower",
+      })}
+    >
       {mode === "main" ? (
         <Main onStart={handleClickStart} />
       ) : state.length < 12 ? (

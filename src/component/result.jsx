@@ -1,4 +1,4 @@
-import { Button, Container, Heading, Image, Text } from '@co-design/core'
+import { Button, Container, Heading, Image, Stack, Text, View } from '@co-design/core'
 import { result } from '../data'
 import Template from './template'
 
@@ -12,19 +12,30 @@ const Result = ({ answers, onRetry }) => {
 
   return (
     <Template>
-      <Container size="xsmall" co={{ height: '100%', overflowY: 'auto' }}>
-        <Heading>{`${mbti} (${result[mbti]?.title})`}</Heading>
-        <Image
-          src={`${process.env.PUBLIC_URL}/images/${mbti}.png`}
-          width={150}
-          fit="contain"
-        />
-        {result[mbti]?.contents?.map((r, i) => (
-          <p key={i} style={{ textAlign: 'left' }}>
-            <Text children={r} align="left" co={{ color: 'white' }} />
-          </p>
-        ))}
-        <Button onClick={onRetry}>다시하기</Button>
+      <Container size="xsmall" co={{ height: '100%', overflowY: 'auto', padding: '32px 16px' }}>
+        <Stack spacing={32}>
+          <Stack spacing={8}>
+            <Heading level={2} strong>{mbti}</Heading>
+            <Heading level={3}>당신은 {result[mbti]?.title}</Heading>
+          </Stack>
+          <Image
+            src={`${process.env.PUBLIC_URL}/images/${mbti}.png`}
+            height={150}
+            fit="contain"
+            align="center"
+            co={{backgroundColor: 'white'}}
+          />
+          <Stack>
+          <View component="ul" co={{color: 'white', margin: 0, paddingLeft: 16}}>
+          {result[mbti]?.contents?.map((r, i) => (
+            <View component="li" co={{ marginBottom: 16 }}>
+              <Text key={i} block children={r} align="left" color="white" />
+            </View>
+          ))}
+          </View>
+          </Stack>
+          <Button onClick={onRetry} fullWidth>다시하기</Button>
+        </Stack>
       </Container>
     </Template>
   )

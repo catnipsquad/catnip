@@ -8,7 +8,7 @@ const Main = ({ onStart }) => {
         <Container fluid co={{ width: '100%', padding: 32 }}>
           <Stack align="center">
             <Image src={process.env.PUBLIC_URL + "/landing.png"} width={160} height={160} radius="large" fit="cover" />
-            <Heading level={2} strong>당신의 MBTI는?</Heading>
+            <Heading level={2} strong>당신도 고양ㅇi 7H발ㅈr..?!</Heading>
             <Button onClick={onStart} fullWidth>시작하기</Button>
           </Stack>
         </Container>
