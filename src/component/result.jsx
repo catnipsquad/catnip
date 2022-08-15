@@ -13,7 +13,7 @@ const Result = ({ answers, onRetry }) => {
     <Template>
       <Container size="xsmall">
         <Heading>{mbti}</Heading>
-        <Image src={`/images/${mbti}.png`} width={256} fit="contain" />
+        <Image src={`${process.env.PUBLIC_URL}/images/${mbti}.png`} width={256} fit="contain" />
         <Button onClick={onRetry}>다시하기</Button>
       </Container>
     </Template>

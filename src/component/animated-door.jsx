@@ -91,15 +91,15 @@ const DoorWrapper = styled.div`
       background-color: #0e1014;
       animation: fadeIn 0.3s ease-out 2s forwards;
 
-      img {
-        position: relative;
-        top: 50%;
-        width: 70%;
-        height: 70%;
-        transform: translateY(-50%);
-        opacity: 0;
-        animation: fadeIn 0.8s ease-out 2.2s forwards, fadeOut 0.5s ease-out 5.2s forwards;
-      }
+      // img {
+      //   position: relative;
+      //   top: 50%;
+      //   width: 70%;
+      //   height: 70%;
+      //   transform: translateY(-50%);
+      //   opacity: 0;
+      //   animation: fadeIn 0.8s ease-out 2.2s forwards, fadeOut 0.5s ease-out 5.2s forwards;
+      // }
     }
 
     @keyframes showBackground {

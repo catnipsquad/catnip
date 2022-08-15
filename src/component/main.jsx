@@ -1,11 +1,18 @@
-import { Button } from "@co-design/core";
+import { Button, Center, Container, Heading, Image, Stack } from "@co-design/core";
 import Template from "./template";
 
 const Main = ({ onStart }) => {
   return (
     <Template animate>
-      Welcome MBTI Test
-      <Button onClick={onStart}>Start</Button>
+      <Center co={{ width: '100%', height: '100%' }}>
+        <Container fluid co={{ width: '100%', padding: 32 }}>
+          <Stack align="center">
+            <Image src={process.env.PUBLIC_URL + "/landing.png"} width={160} height={160} radius="large" fit="cover" />
+            <Heading level={2} strong>당신의 MBTI는?</Heading>
+            <Button onClick={onStart} fullWidth>시작하기</Button>
+          </Stack>
+        </Container>
+      </Center>
     </Template>
   );
 };
